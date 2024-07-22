@@ -65,7 +65,7 @@ class Authenticator(dns_common.DNSAuthenticator):
 
     def _cleanup(self, domain, validation_name, validation):
         try:
-            self._get_arvancloud_client().delete_record_by_name(domain, self._fqdn_format(validation_name))
+            self._get_arvancloud_client().delete_record_by_name(domain, validation_name[:-(len(domain) + 1)])
         except (requests.ConnectionError, _NotAuthorizedException) as exception:
             raise errors.PluginError(exception)
 
