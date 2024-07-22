@@ -12,7 +12,7 @@ from certbot_dns_arvancloud.arvancloud_client import \
     _ArvanCloudClient, \
     _NotAuthorizedException
 
-TTL = 60
+TTL = 120
 
 
 @zope.interface.implementer(interfaces.IAuthenticator)
@@ -51,7 +51,7 @@ class Authenticator(dns_common.DNSAuthenticator):
             self._get_arvancloud_client().add_record(
                 domain,
                 "TXT",
-                self._fqdn_format(validation_name),
+                validation_name,
                 validation,
                 TTL,
                 False
