@@ -51,7 +51,7 @@ class Authenticator(dns_common.DNSAuthenticator):
             self._get_arvancloud_client().add_record(
                 domain,
                 "TXT",
-                validation_name,
+                validation_name[:-(len(domain) + 1)],
                 validation,
                 TTL,
                 False
