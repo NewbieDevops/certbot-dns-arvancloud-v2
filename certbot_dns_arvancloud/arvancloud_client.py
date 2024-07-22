@@ -61,7 +61,7 @@ class _ArvanCloudClient:
         :raises ._NotAuthorizedException: If ArvanCloud does not accept the authorization credentials
         :raises requests.exceptions.ConnectionError: If the API request fails
         """
-        create_record_response = requests.post(
+        create_record_response = requests.request("POST",
             url="{0}/{1}/dns-records".format(ARVANCLOUD_API_ENDPOINT, domain),
             headers=self._headers,
             data=json.dumps({
