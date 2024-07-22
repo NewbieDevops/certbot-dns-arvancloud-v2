@@ -1,6 +1,0 @@
-certbot>=1.1.0
-mock
-requests
-requests-mock
-setuptools
-zope.interface

@@ -1,3 +1,0 @@
-[certbot.plugins]
-dns-arvancloud = certbot_dns_arvancloud.dns_arvancloud:Authenticator
-
